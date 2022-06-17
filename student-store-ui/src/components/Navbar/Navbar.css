@@ -1,0 +1,56 @@
+
+/* navigation bar and header */
+.navbar{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    max-width: 100vw;
+    height: 60px;
+    align-items: center;
+    margin: auto;
+    padding-left: 10px;
+    
+}
+
+.navbar p:hover{
+    cursor: pointer;
+    color: #783232;
+}
+
+/* 4 links styling */
+.content {
+    margin: auto;
+}
+
+.content ul{
+    list-style: none;
+    /* color: #783232; */
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+}
+/* when hovering over navbar links */
+.link-btn:hover{
+    cursor: pointer;
+    color: #783232;
+}
+
+/* shopping cart icon */
+.cart-icon{
+    stroke: white;
+    margin-right: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.cart-icon:hover{
+    stroke:#783232;
+    cursor: pointer;
+}
