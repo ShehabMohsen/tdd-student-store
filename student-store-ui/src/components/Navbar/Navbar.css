@@ -6,13 +6,15 @@
     color: white;
     font-weight: bold;
     display: flex;
-    position: fixed;
+    position: absolute;
     width: 100%;
     max-width: 100vw;
-    height: 60px;
+    height: 70px;
     align-items: center;
     margin: auto;
     padding-left: 10px;
+    font-size: 22px;
+    position: fixed;
     
 }
 
@@ -40,17 +42,55 @@
 .link-btn:hover{
     cursor: pointer;
     color: #783232;
+    transition: 0.3s;
+}
+
+
+/* search area */
+
+.search-bar{
+  display:inline-flex;
+  /* flex-direction: row; */
+  align-content: left;
+  margin-left: 24px;
+  margin-right: auto;
+}
+
+#search-input{
+  width: 267px;
+  height: 35px;
+  border:white solid 2px;
+  transition: 0.5s;
+}
+
+#search-input:hover{
+  border:#783232 solid 2px;
+  
+}
+
+.search-icon{
+  height: 35px;
+  /* stroke: white; */
+  transition: 0.35s;
+  margin-top: 5px;
+}
+
+.navbar svg:hover{
+    stroke:#783232
 }
 
 /* shopping cart icon */
 .cart-icon{
     stroke: white;
+    margin-top: 4px;
     margin-right: 10px;
     margin-left: auto;
     cursor: pointer;
+    transition:0.35s
 }
 
 .cart-icon:hover{
     stroke:#783232;
     cursor: pointer;
 }
+

@@ -1,0 +1,37 @@
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    background-color: #783232;
+    opacity: 0.9;
+    overflow-x:hidden;
+    transition: 0.35s;
+}
+
+.side-nav a{
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    opacity: 1;
+    display: block;
+    transition: 0.25ms;
+
+}
+
+.side-nav a:hover{
+    color:#000;
+    cursor:pointer;
+}
+
+.side-nav .btn-close{
+    position: absolute;
+    top :0;
+    right:22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+

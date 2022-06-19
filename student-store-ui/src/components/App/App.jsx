@@ -2,7 +2,6 @@ import * as React from "react";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
-import Subnavbar from "../Subnavbar/Subnavbar";
 import { BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import { useState} from "react";
@@ -14,6 +13,8 @@ export default function App() {
   
   const URL = "https://codepath-store-api.herokuapp.com/store"
   const [products, setProducts]=useState([])
+  const [searchText, setSearchText] = useState("")
+
 
   // getting item data
   async function getData(){
@@ -21,7 +22,9 @@ export default function App() {
     const responseData = await axios.get(URL).then((response)=>{
       return response.data.products
     })
+    console.log("response data",responseData)
     setProducts([...responseData]);
+
   }
 
   // executes the getData function as soon as it the component is mounted
@@ -32,13 +35,11 @@ export default function App() {
 
   // getting item data
   async function getDataCategory(category){
-    console.log(category)
     // category = event.target.value.toLowerCase()
     const responseData = await axios.get(URL).then((response)=>{
       return response.data.products
     })
 
-    console.log("get", responseData)
     let array= []
 
     for (let i=0; i<responseData.length;i++){
@@ -48,17 +49,31 @@ export default function App() {
     setProducts(array)
   }
 
-  console.log("products", products)
+  async function searchData(value){
+    const responseData = await axios.get(URL).then((response)=>{
+      return response.data.products
+    })
+
+    
+    let array = [];
+    for (let i=0; i<responseData.length;i++){
+      let itemName = responseData[i].name.toLowerCase();
+      if (itemName.includes(value)) array.push(responseData[i])
+    }
+    setProducts(array)  
+  }
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar />
+          <Navbar searchData = {searchData}/>
           {/* <Banner/> */}
           <Sidebar />
-          <Subnavbar />
-          <Home products = {products} setProducts = {setProducts} getDataCategory = {getDataCategory}/>
+          <Home products = {products} setProducts = {setProducts} 
+          getDataCategory = {getDataCategory} 
+          searchText = {searchText} setSearchText = {searchText}/>
         </main>
       </BrowserRouter>
     </div>

@@ -1,23 +1,63 @@
 import * as React from "react";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({searchData}) {
+  function handleOnTextChange(event) {
+    searchData(event.target.value.toLowerCase());
+  }
+
   return (
     <nav className="navbar" color="red">
       <p>Shopify</p>
       <div className="content">
         <ul className="links">
-          <li className="link-btn"> Home</li>
+          <li className="link-btn">Home</li>
           <li className="link-btn">Shop</li>
           <li className="link-btn">Contact Us</li>
           <li className="link-btn">About Us</li>
         </ul>
       </div>
+
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search"
+        onChange={handleOnTextChange}
+      >
+      </input>
+      <label for = "search-input">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="search-icon"
+          width="38"
+          height="38"
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+          stroke="black"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path strokeWidth="none" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+        </label>
+      <a href="#" onClick = {()=>{
+          document.querySelector("#side-menu").style.width = "400px";
+          document.querySelector(".home").style.marginRight = "400px";
+          document.querySelector(".cart-icon").style.opacity="0";
+          // document.querySelector(".navbar-nav").style.marginRight = "400px";
+          // document.querySelector("#search-input").style.marginRight="400px";
+          // document.querySelector(".search-icon").style.marginRight="360px";
+        }}>
+      
+
       <svg
         className="cart-icon"
         xmlns="http://www.w3.org/2000/svg"
-        width="35"
-        height="35"
+        width="40"
+        height="40"
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="#2c3e50"
@@ -31,6 +71,7 @@ export default function Navbar() {
         <path d="M17 17h-11v-14h-2" />
         <path d="M6 5l14 1l-1 7h-13" />
       </svg>
+      </a>
     </nav>
   );
 }
