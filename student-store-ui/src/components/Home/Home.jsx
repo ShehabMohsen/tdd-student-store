@@ -3,7 +3,7 @@ import "./Home.css";
 import axios from "axios";
 import "./Contact.css";
 import "./About.css";
-
+import {Link} from "react-router-dom"
 export default function Home({
   products,
   setProducts,
@@ -12,12 +12,11 @@ export default function Home({
   searchText,
   setSearchText,
 }) {
-  function handleOnTextChange(event) {
-    searchData(event.target.value.toLowerCase());
-  }
+ 
 
   return (
     <div className="home">
+      
 
       <div className="temp">
         <div className="categories">
@@ -58,15 +57,15 @@ export default function Home({
             TECH
           </h2>
         </div>
-
-        <ul className="product-list">
+      
+        <ul className="product-grid" id="shop">
           {products.map((element) => {
             return <DisplayProducts key={element.id} product={element} />;
             // return <img src={element.image} width={100} height={100}></img>
           })}
         </ul>
-      </div>
-      <div className="about">
+        </div>
+        <div className="about" id = "About">
         <h2>About</h2>
         <p>
           The codepath student store offers great products at great prices from
@@ -78,19 +77,22 @@ export default function Home({
         </p>
       </div>
 
-      <div className="contact">
+      <div className="contact" id = "Contact">
         <h2>Contact</h2>
         <p>Email: code@path.org</p>
         <p>Phone: 1-800-CODEPATH</p>
         <p>Address:123 Fake Street, San Francisco, CA</p>
         <p>socials: twitter, instagram</p>
       </div>
+      
     </div>
   );
 }
 
-export function DisplayProducts({ product }) {
+export function DisplayProducts({product}) {
+  
   return (
+    <Link to ={`/products/${product.id}`} product = {product} id = {product.id}>
     <div className="product-card">
       <img
         src={product.image}
@@ -103,5 +105,6 @@ export function DisplayProducts({ product }) {
         <p className="product-price">${product.price}</p>
       </div>
     </div>
+    </Link>
   );
 }

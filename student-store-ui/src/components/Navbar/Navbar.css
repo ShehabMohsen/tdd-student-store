@@ -14,7 +14,7 @@
     margin: auto;
     padding-left: 10px;
     font-size: 22px;
-    position: fixed;
+    /* position: fixed; */
     
 }
 
@@ -30,8 +30,6 @@
 
 .content ul{
     list-style: none;
-    /* color: #783232; */
-    color: white;
     font-weight: bold;
     display: flex;
     flex-direction: row;
@@ -39,13 +37,19 @@
     gap: 15px;
 }
 /* when hovering over navbar links */
-.link-btn:hover{
-    cursor: pointer;
-    color: #783232;
-    transition: 0.3s;
+.links a{
+  color: white;
+  transition: 0.3s;
+  text-decoration: none;
 }
 
+.links a:hover{
+  cursor: pointer;
+  transition: 0.3s;
+  color: #783232;
 
+
+}
 /* search area */
 
 .search-bar{
@@ -70,7 +74,7 @@
 
 .search-icon{
   height: 35px;
-  /* stroke: white; */
+  stroke: white;
   transition: 0.35s;
   margin-top: 5px;
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Navbar.css";
-
+import { Link} from "react-router-dom";
 export default function Navbar({searchData}) {
   function handleOnTextChange(event) {
     searchData(event.target.value.toLowerCase());
@@ -8,13 +8,13 @@ export default function Navbar({searchData}) {
 
   return (
     <nav className="navbar" color="red">
-      <p>Shopify</p>
+    <Link to = "/"> <p>Shopify</p></Link>
       <div className="content">
         <ul className="links">
-          <li className="link-btn">Home</li>
-          <li className="link-btn">Shop</li>
-          <li className="link-btn">Contact Us</li>
-          <li className="link-btn">About Us</li>
+          <li className="link-btn"><a href="/">Home</a></li>
+          <li className="link-btn"><a href="/#shop">Shop</a></li>
+          <li className="link-btn"><a href = "/#Contact">Contact Us</a></li>
+          <li className="link-btn"><a href = "/#About">About Us</a></li>
         </ul>
       </div>
 
