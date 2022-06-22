@@ -3,6 +3,7 @@ import "./Home.css";
 import axios from "axios";
 import "./Contact.css";
 import "./About.css";
+import ProductGrid from "../ProductGrid/ProductGrid";
 import {Link} from "react-router-dom"
 export default function Home({
   products,
@@ -13,7 +14,6 @@ export default function Home({
   setSearchText,
 }) {
  
-
   return (
     <div className="home">
       
@@ -57,13 +57,10 @@ export default function Home({
             TECH
           </h2>
         </div>
-      
-        <ul className="product-grid" id="shop">
-          {products.map((element) => {
-            return <DisplayProducts key={element.id} product={element} />;
-            // return <img src={element.image} width={100} height={100}></img>
-          })}
-        </ul>
+        
+        <ProductGrid products = {products}/>
+
+        
         </div>
         <div className="about" id = "About">
         <h2>About</h2>
@@ -76,7 +73,7 @@ export default function Home({
           country.
         </p>
       </div>
-
+    
       <div className="contact" id = "Contact">
         <h2>Contact</h2>
         <p>Email: code@path.org</p>
@@ -84,27 +81,6 @@ export default function Home({
         <p>Address:123 Fake Street, San Francisco, CA</p>
         <p>socials: twitter, instagram</p>
       </div>
-      
     </div>
-  );
-}
-
-export function DisplayProducts({product}) {
-  
-  return (
-    <Link to ={`/products/${product.id}`} product = {product} id = {product.id}>
-    <div className="product-card">
-      <img
-        src={product.image}
-        className="product-image"
-        width={267}
-        height={267}
-      ></img>
-      <div className="product-info">
-        <h3 className="product-title">{product.name}</h3>
-        <p className="product-price">${product.price}</p>
-      </div>
-    </div>
-    </Link>
   );
 }

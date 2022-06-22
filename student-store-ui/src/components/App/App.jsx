@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import ProductView from "../ProductView/ProductView";
+import ProductDetail from "../ProductDetail/ProductDetail";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -30,6 +31,7 @@ export default function App() {
     getData();
   }, []);
 
+
   // getting item data
   async function getDataCategory(category) {
     // category = event.target.value.toLowerCase()
@@ -45,6 +47,7 @@ export default function App() {
 
     setProducts(array);
   }
+ 
 
   async function searchData(value) {
     const responseData = await axios.get(URL).then((response) => {
@@ -77,10 +80,11 @@ export default function App() {
                   getDataCategory={getDataCategory}
                   searchText={searchText}
                   setSearchText={searchText}
+                  searchData = {searchData}
                 />
               }
             />
-            <Route path="/products/:productId" element={<ProductView/>} />
+            <Route path="/products/:productId" element={<ProductDetail/>} />
           </Routes>
         </main>
       </BrowserRouter>

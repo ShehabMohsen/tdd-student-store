@@ -25,7 +25,7 @@ export default function Navbar({searchData}) {
         onChange={handleOnTextChange}
       >
       </input>
-      <label for = "search-input">
+      <label htmlFor = "search-input">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="search-icon"

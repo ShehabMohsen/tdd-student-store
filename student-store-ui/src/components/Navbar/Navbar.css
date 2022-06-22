@@ -15,12 +15,17 @@
     padding-left: 10px;
     font-size: 22px;
     /* position: fixed; */
-    
+}
+
+.navbar p{
+  color: #783232;
+  text-decoration: none;
+  padding-left: 15px;
 }
 
 .navbar p:hover{
     cursor: pointer;
-    color: #783232;
+    color: white;
 }
 
 /* 4 links styling */

@@ -1,17 +1,14 @@
-export default function ProductView({product, id}) {
-  const productId = 1;
+import { ProductCard } from "../ProductCard/ProductCard";
+import * as React from "react";
+
+export default function ProductView(props) {
   
   return (
-    <h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, odit
-      molestias? Nostrum est necessitatibus hic, voluptatum voluptatem beatae
-      accusamus ea, quibusdam eos iusto ipsum provident numquam, facere nulla
-      suscipit obcaecati sed reiciendis! Et, quasi. Excepturi, mollitia quasi
-      magni dicta sed sit ipsum atque quos tempore voluptate ducimus maxime
-      architecto voluptas eaque cupiditate harum nulla? Porro architecto
-      perspiciatis nostrum. Unde sequi ratione adipisci quo vero, reprehenderit
-      saepe necessitatibus quisquam dicta tempore quos modi itaque fugiat
-      voluptates exercitationem aperiam eum optio magnam.
-    </h1>
+    <div className="product-view">
+      <ProductCard {...props} showDescription={true}/>
+    </div>
   );
 }
+
+
+
