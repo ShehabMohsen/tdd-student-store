@@ -10,11 +10,11 @@ app.use(express.json())
 app.use(cors())
 app.use("/store", storeRouter)
 
-
 app.get('/', async (req, res) => {
 
     res.status(200).json({ping:"ping pong"})
   })
+
 
 
 

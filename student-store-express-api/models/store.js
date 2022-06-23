@@ -12,6 +12,10 @@ class Store{
         return response;
     }
 
+    static fetchByItem(){
+        const response = storage.get()
+    }
+
 }
 
 module.exports = Store

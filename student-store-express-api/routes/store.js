@@ -12,5 +12,14 @@ router.get("/", async (req, res, next)=>{
     }   
 })
 
+router.get("/:product", async (req, res, next)=>{
+    try {
+        const productId = req.params.product
+
+    } catch (error){
+        next(error)
+    }
+})
+
 
 module.exports = router
