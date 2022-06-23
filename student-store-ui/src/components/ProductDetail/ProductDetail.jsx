@@ -28,7 +28,8 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemToCa
   return product ? (
     
     <div className="product-detail">
-      <ProductView product={product} productId = {product.id} imgWidth = {400} imgHeight = {400}/>
+      <ProductView product={product} productId = {product.id} imgWidth = {400} imgHeight = {400} handleAddItemToCart = {handleAddItemToCart}
+      handleRemoveItemToCart = {handleRemoveItemToCart}/>
     </div>
   ):(
     <h1>Loading...</h1>

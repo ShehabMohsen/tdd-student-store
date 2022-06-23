@@ -3,3 +3,14 @@
     align-items: center;
     justify-content: center;
 }
+
+
+.product-info{
+    background-color: rgb(255, 188, 188);
+    padding: 10px;
+    /* color: aliceblue; */
+    color: black;
+  }
+
+  
+  

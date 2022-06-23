@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Contact.css";
 import "./About.css";
 import ProductGrid from "../ProductGrid/ProductGrid";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 export default function Home({
   products,
   setProducts,
@@ -12,12 +12,11 @@ export default function Home({
   searchData,
   searchText,
   setSearchText,
+  handleAddItemToCart,
+  handleRemoveItemToCart,
 }) {
- 
   return (
     <div className="home">
-      
-
       <div className="temp">
         <div className="categories">
           <h2
@@ -57,12 +56,14 @@ export default function Home({
             TECH
           </h2>
         </div>
-        
-        <ProductGrid products = {products}/>
 
-        
-        </div>
-        <div className="about" id = "About">
+        <ProductGrid
+          products={products}
+          handleAddItemToCart={handleAddItemToCart}
+          handleRemoveItemToCart={handleRemoveItemToCart}
+        />
+      </div>
+      <div className="about" id="About">
         <h2>About</h2>
         <p>
           The codepath student store offers great products at great prices from
@@ -73,8 +74,8 @@ export default function Home({
           country.
         </p>
       </div>
-    
-      <div className="contact" id = "Contact">
+
+      <div className="contact" id="Contact">
         <h2>Contact</h2>
         <p>Email: code@path.org</p>
         <p>Phone: 1-800-CODEPATH</p>

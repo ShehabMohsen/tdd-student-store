@@ -9,7 +9,8 @@ export default function ProductGrid({
   return (
     <div className="product-grid" id="shop">
       {products.map((element) => {
-        return <ProductCard key={element.id} product={element} />;
+        return <ProductCard key={element.id} product={element} handleAddItemToCart = {handleAddItemToCart}
+        handleRemoveItemToCart  = {handleRemoveItemToCart}/>;
       })}
     </div>
   );

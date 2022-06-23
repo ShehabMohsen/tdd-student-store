@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import "./ProductCard.css"
 export function ProductCard({
   product,
   productId,
@@ -25,6 +26,18 @@ export function ProductCard({
           <h3 className="product-name">{product.name}</h3>
           <p className="product-price">${product.price}</p>
           {showDescription ? <p className="product-description">{product.description}</p> : ""}
+        </div>
+
+        <div className="actions">
+          <div className="buttons">
+            <button className = "add"  onClick = {()=>{handleAddItemToCart(product.id)}}>
+            <i className="material-icons">add</i>
+            </button>
+            <button className = "remove" onClick = {()=>{handleRemoveItemToCart(product.id)}}>
+            <i className="material-icons">remove</i>
+            </button>
+            {/* <span className="quantity"><span className="amt"></span></span> */}
+          </div>
         </div>
       </div>
   );
