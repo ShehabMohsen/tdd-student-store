@@ -14,10 +14,11 @@ class Storage {
     this.db.defaults({ purchases: [], products: [] }).write()
   }
 
+  // appenidng/adding to something that already exists
   set(key, value) {
     return this.db.set(key, value)
   }
-
+  //grabbing something that already exists
   get(key) {
     return this.db.get(key)
   }
