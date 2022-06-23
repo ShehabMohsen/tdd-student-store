@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./Navbar.css";
 import { Link} from "react-router-dom";
-export default function Navbar({searchData}) {
+export default function Navbar({searchData, handleOnToggle}) {
   function handleOnTextChange(event) {
     searchData(event.target.value.toLowerCase());
   }
@@ -43,14 +43,7 @@ export default function Navbar({searchData}) {
           <line x1="21" y1="21" x2="15" y2="15" />
         </svg>
         </label>
-      <a href="#" onClick = {()=>{
-          document.querySelector("#side-menu").style.width = "400px";
-          document.querySelector(".home").style.marginRight = "400px";
-          document.querySelector(".cart-icon").style.opacity="0";
-          // document.querySelector(".navbar-nav").style.marginRight = "400px";
-          // document.querySelector("#search-input").style.marginRight="400px";
-          // document.querySelector(".search-icon").style.marginRight="360px";
-        }}>
+      <a href="#" onClick = {handleOnToggle}>
       
 
       <svg

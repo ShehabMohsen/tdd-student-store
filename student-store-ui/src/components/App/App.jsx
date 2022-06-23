@@ -17,6 +17,7 @@ export default function App() {
   const [searchText, setSearchText] = useState("");
   //array of objects -> each object have two attributes: itemId and quantity
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [isOpen, setIsOpen] = useState(false)
 
   // getting item data
   async function getData() {
@@ -60,8 +61,25 @@ export default function App() {
     setProducts(array);
   }
 
-  function handleOnToggle() {}
+  //makes the sidebar show up and disappear
+  function handleOnToggle() {
+    if (isOpen){ 
+      setIsOpen(false)
+      document.querySelector("#side-menu").style.width = "0";
+      document.querySelector(".home").style.marginRight = "0";
+      document.querySelector(".cart-icon").style.marginRight = "inline";
+      document.querySelector(".cart-icon").style.opacity="1";
+      document.querySelector(".search-icon").style.marginRight="2px";
+    }
+    if (!isOpen){
+    setIsOpen (true)
+    document.querySelector("#side-menu").style.width = "400px";
+    document.querySelector(".home").style.marginRight = "400px";
+    document.querySelector(".cart-icon").style.opacity="0";
+    }
+  }
 
+  //adding items to cart
   const handleAddItemToCart = (productId)=> {
     let newShoppingCart = shoppingCart
     let temp  = {
@@ -81,7 +99,7 @@ export default function App() {
     }
     else setShoppingCart(newShoppingCart)
   }
-  
+  // removing items to cart
   const handleRemoveItemToCart  = (productId)=> {
     let newShoppingCart = []
     for (let i = 0; i < shoppingCart.length; i++) {
@@ -109,14 +127,16 @@ export default function App() {
 
   function handleOnSubmitCheckoutForm() {}
 
+
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar searchData={searchData} />
+          <Navbar searchData={searchData} handleOnToggle = {handleOnToggle} />
           {/* <Banner/> */}
-          <Sidebar />
+          <Sidebar handleOnToggle = {handleOnToggle} />
           <Routes>
             <Route
               path="/"

@@ -36,7 +36,7 @@ export function ProductCard({
             <button className = "remove" onClick = {()=>{handleRemoveItemToCart(product.id)}}>
             <i className="material-icons">remove</i>
             </button>
-            {/* <span className="quantity"><span className="amt"></span></span> */}
+            <span className="quantity"><span className="amt">{quantity}</span></span>
           </div>
         </div>
       </div>
