@@ -6,38 +6,43 @@
   align-content: center;
   max-width: 100vw;
   min-height: 100vh;
-  padding-top: 100px;
   transition: 0.35s;
 }
 
+.home h1{
+  color: #88D4CC;
+}
 /* temp contains product list and categories */
-.temp{
+.categories-list {
+  /* padding: 20px 0px; */
+  font: bold;
+  /* margin: 15px;  */
   display: flex;
   flex-direction: row;
+
 }
 
-.categories {
-  font: bold;
-  margin: 15px; 
-  padding: 10px;
-  max-width: 250px; 
-}
-
-#category1{
-  border-top: 2px solid black;
-}
-
-.categories h2{
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  background-color: rgb(255, 188, 188);
-  margin: 0;
-  padding: 5px;
+.categories-list li{
   list-style: none;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 50px;
+  width: 100%;
 }
-.categories h2:hover{
-  background-color: #783232;
+
+
+.categories-list li{
+color:#965e6b;
+display:flex;
+transition:0.1s
+}
+
+
+.categories-list li:hover{
+  /* border-bottom: 3px solid #88D4CC; */
+  transition: 0.1s;
+  color: #88D4CC;
   cursor:pointer;
 }
 
@@ -45,6 +50,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-right: 250px;
+  margin: 15px; 
+  padding: 10px;
 }
 
 
@@ -78,10 +85,10 @@
 
 .about {
   padding:0 20px;
-  background-color: rgb(255, 188, 188);;
+  background-color:#88D4CC;;
 }
 
 .contact{
   padding:0 20px;
-  background-color: rgb(255, 188, 188);
+  background-color: #88D4CC;
 }

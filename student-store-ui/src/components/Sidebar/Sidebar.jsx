@@ -1,17 +1,29 @@
-import * as React from "react"
-import "./Sidebar.css"
+import * as React from "react";
+import "./Sidebar.css";
 import Navbar from "../Navbar/Navbar";
-
-export default function Sidebar(props) {
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+export default function Sidebar({
+  isOpen,
+  handleOnToggle,
+  shoppingCart,
+  products,
+  checkoutForm,
+  handleOnCheckoutFormChange,
+  handleOnSubmitCheckoutForm,
+}) {
   return (
     <section className="sidebar">
       <div className="side-nav" id="side-menu">
-      <a href="#" className = "btn-close" onClick = {props.handleOnToggle}>&times;</a>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Cart</a>
+        <a href="#" className="btn-close" onClick={handleOnToggle}>
+          &times;
+        </a>
+        <ShoppingCart shoppingCart={shoppingCart} products={products} />
+
+        <CheckoutForm checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange}
+        handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}
+        shoppingCart = {shoppingCart} isOpen = {isOpen}/>
       </div>
     </section>
-  )
+  );
 }

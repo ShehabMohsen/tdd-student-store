@@ -2,7 +2,8 @@
 /* navigation bar and header */
 .navbar{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: black;
+    background-color:#66B9D2;
+    background-color:#712F3E;
     color: white;
     font-weight: bold;
     display: flex;
@@ -18,14 +19,16 @@
 }
 
 .navbar p{
-  color: #783232;
+  color: white;
+
   text-decoration: none;
   padding-left: 15px;
 }
 
 .navbar p:hover{
     cursor: pointer;
-    color: white;
+    color: #ea5e73;
+    color: #88D4CC;
 }
 
 /* 4 links styling */
@@ -51,9 +54,8 @@
 .links a:hover{
   cursor: pointer;
   transition: 0.3s;
-  color: #783232;
-
-
+  color: #712F3E;
+  color: #88D4CC;
 }
 /* search area */
 
@@ -69,11 +71,11 @@
   width: 267px;
   height: 35px;
   border:white solid 2px;
-  transition: 0.5s;
+  transition: ease-in 0.2s;
 }
 
 #search-input:hover{
-  border:#783232 solid 2px;
+  border:#88D4CC solid 4px;
   
 }
 
@@ -85,7 +87,7 @@
 }
 
 .navbar svg:hover{
-    stroke:#783232
+    stroke:#88D4CC
 }
 
 /* shopping cart icon */
@@ -99,7 +101,7 @@
 }
 
 .cart-icon:hover{
-    stroke:#783232;
+    stroke:#88D4CC;
     cursor: pointer;
 }
 

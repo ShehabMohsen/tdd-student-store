@@ -12,19 +12,23 @@ import axios from "axios";
 import "./App.css";
 
 export default function App() {
-  const URL = "https://codepath-store-api.herokuapp.com/store";
+  const URL = "http://localhost:3001/store";
   const [products, setProducts] = useState([]);
   const [searchText, setSearchText] = useState("");
   //array of objects -> each object have two attributes: itemId and quantity
   const [shoppingCart, setShoppingCart] = useState([]);
   const [isOpen, setIsOpen] = useState(false)
+  const [activeCategory, setActiveCategory] = useState("All Items")
+  const [checkoutForm, setCheckoutForm] = useState({
+    name:"",
+    email:""
+  })
 
   // getting item data
   async function getData() {
     const responseData = await axios.get(URL).then((response) => {
       return response.data.products;
     });
-    console.log("response data", responseData);
     setProducts([...responseData]);
   }
   // executes the getData function as soon as it the component is mounted
@@ -39,13 +43,20 @@ export default function App() {
       return response.data.products;
     });
 
+    
     let array = [];
-
     for (let i = 0; i < responseData.length; i++) {
       if (responseData[i].category == category) array.push(responseData[i]);
     }
-
     setProducts(array);
+    categoryDisplay(category)
+  }
+  
+  function categoryDisplay(category){
+    if (category == "clothing") setActiveCategory("Clothes")
+    if (category == "food") setActiveCategory("Food")
+    if (category == "tech") setActiveCategory("Tech")
+    if (category == "accessories") setActiveCategory("Accessories")
   }
 
   async function searchData(value) {
@@ -58,8 +69,10 @@ export default function App() {
       let itemName = responseData[i].name.toLowerCase();
       if (itemName.includes(value)) array.push(responseData[i]);
     }
+    setActiveCategory("All Items")
     setProducts(array);
   }
+
 
   //makes the sidebar show up and disappear
   function handleOnToggle() {
@@ -73,21 +86,21 @@ export default function App() {
     }
     if (!isOpen){
     setIsOpen (true)
-    document.querySelector("#side-menu").style.width = "400px";
-    document.querySelector(".home").style.marginRight = "400px";
+    document.querySelector("#side-menu").style.width = "500px";
+    document.querySelector(".home").style.marginRight = "500px";
     document.querySelector(".cart-icon").style.opacity="0";
     }
   }
 
   //adding items to cart
   const handleAddItemToCart = (productId)=> {
-    let newShoppingCart = shoppingCart
+    let newShoppingCart = [...shoppingCart]
     let temp  = {
       itemId: productId,
       quantity: 1
     }
     let isInArray = false
-
+    
     for (let i = 0; i < shoppingCart.length; i++) {
       if (newShoppingCart[i].itemId == productId){
         newShoppingCart[i].quantity += 1;
@@ -99,6 +112,7 @@ export default function App() {
     }
     else setShoppingCart(newShoppingCart)
   }
+  
   // removing items to cart
   const handleRemoveItemToCart  = (productId)=> {
     let newShoppingCart = []
@@ -117,15 +131,35 @@ export default function App() {
       }
       else newShoppingCart.push(shoppingCart[i]) //copy the rest of the elements into the cart
     }
-    
     setShoppingCart(newShoppingCart)
   }
-  
   console.log(shoppingCart)
   
-  function handleOnCheckoutFormChange() {}
+  const handleOnCheckoutFormChange = (event) => {
+    setCheckoutForm({...checkoutForm, [event.target.name]: event.target.value});
+  }
 
-  function handleOnSubmitCheckoutForm() {}
+  const handleOnSubmitCheckoutForm = (event)=> {
+    // let url = "https://codepath-store-api.herokuapp.com/store" //codepath version
+
+    try {
+      const response = axios.post("http://localhost:3001/store",
+      {
+       user:checkoutForm,
+       shoppingCart:shoppingCart 
+      })
+      
+      setCheckoutForm({
+        name:"",
+        email:""
+      })
+      setShoppingCart([])
+      console.log("response", response)
+    }
+    catch (error){
+      console.log(error)
+    }
+  }
 
 
 
@@ -136,7 +170,10 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar searchData={searchData} handleOnToggle = {handleOnToggle} />
           {/* <Banner/> */}
-          <Sidebar handleOnToggle = {handleOnToggle} />
+          <Sidebar isOpen = {isOpen} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart} products = {products}
+            checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}
+          />
           <Routes>
             <Route
               path="/"
@@ -150,6 +187,8 @@ export default function App() {
                   searchData={searchData}
                   handleAddItemToCart = {handleAddItemToCart}
                   handleRemoveItemToCart  = {handleRemoveItemToCart}
+                  shoppingCart = {shoppingCart}
+                  activeCategory = {activeCategory}
                 />
               }
             />

@@ -5,6 +5,8 @@ import "./Contact.css";
 import "./About.css";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import { Link } from "react-router-dom";
+import Hero from "../Hero/Hero";
+
 export default function Home({
   products,
   setProducts,
@@ -14,55 +16,63 @@ export default function Home({
   setSearchText,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  shoppingCart,
+  activeCategory,
 }) {
   return (
     <div className="home">
-      <div className="temp">
-        <div className="categories">
-          <h2
+      <Hero />
+
+      <div className="categories">
+        <ul className="categories-list">
+          <li
             id="category1"
             onClick={() => {
               searchData("");
             }}
           >
             ALL CATEGORIES
-          </h2>
-          <h2
+          </li>
+          <li
             onClick={() => {
               getDataCategory("clothing");
             }}
           >
             CLOTHES
-          </h2>
-          <h2
+          </li>
+          <li
             onClick={() => {
               getDataCategory("food");
             }}
           >
             FOOD
-          </h2>
-          <h2
+          </li>
+          <li
             onClick={() => {
               getDataCategory("accessories");
             }}
           >
             ACCESSORIES
-          </h2>
-          <h2
+          </li>
+          <li
             onClick={() => {
               getDataCategory("tech");
             }}
           >
             TECH
-          </h2>
-        </div>
-
-        <ProductGrid
-          products={products}
-          handleAddItemToCart={handleAddItemToCart}
-          handleRemoveItemToCart={handleRemoveItemToCart}
-        />
+          </li>
+        </ul>
       </div>
+
+      <h1>{activeCategory}</h1>
+      <ProductGrid
+        products={products}
+        handleAddItemToCart={handleAddItemToCart}
+        handleRemoveItemToCart={handleRemoveItemToCart}
+        shoppingCart={shoppingCart}
+        activeCategory={activeCategory}
+      />
+
       <div className="about" id="About">
         <h2>About</h2>
         <p>

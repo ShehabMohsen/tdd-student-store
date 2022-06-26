@@ -5,8 +5,9 @@
     z-index: 1;
     right: 0;
     top: 0;
-    background-color: #783232;
-    opacity: 0.9;
+    background-color: #712F3E;
+    background-color: #88D4CC;
+    opacity: 1;
     overflow-x:hidden;
     transition: 0.35s;
 }
@@ -15,7 +16,7 @@
     padding: 10px 10px 10px 30px;
     text-decoration: none;
     font-size: 22px;
-    color: white;
+    color: #712F3E;
     opacity: 1;
     display: block;
     transition: 0.25ms;
@@ -23,7 +24,7 @@
 }
 
 .side-nav a:hover{
-    color:#000;
+    color:white;
     cursor:pointer;
 }
 

@@ -17,7 +17,7 @@ export default function Navbar({searchData, handleOnToggle}) {
           <li className="link-btn"><a href = "/#About">About Us</a></li>
         </ul>
       </div>
-
+    
       <input
         id="search-input"
         type="text"
@@ -45,7 +45,6 @@ export default function Navbar({searchData, handleOnToggle}) {
         </label>
       <a href="#" onClick = {handleOnToggle}>
       
-
       <svg
         className="cart-icon"
         xmlns="http://www.w3.org/2000/svg"

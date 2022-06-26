@@ -15,11 +15,12 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemToCa
   }, [])
 
   async function getProduct(id){
-    const URL = `https://codepath-store-api.herokuapp.com/store/${id}`
+    // const URL = `https://codepath-store-api.herokuapp.com/store/${id}` //codepath's url
+    const URL = `http://localhost:3001/store/${id}`
     
     const responseData = await axios.get(URL).then((response) => {
-      console.log(response);
-      return response.data.product;
+      // return response.data.product; //using codepath's url
+      return response.data;
     });
     console.log(responseData);
     setProduct(responseData);

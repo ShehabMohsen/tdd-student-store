@@ -13,7 +13,7 @@ export function ProductCard({
 }) {
   return (
     <div className="product-card">
-    <Link to={`/products/${product.id}`} product={product} id={product.id}>
+    <Link className="media" to={`/products/${product.id}`} product={product} id={product.id}>
         <img
           src={product.image}
           className="product-image"
@@ -36,7 +36,7 @@ export function ProductCard({
             <button className = "remove" onClick = {()=>{handleRemoveItemToCart(product.id)}}>
             <i className="material-icons">remove</i>
             </button>
-            <span className="quantity"><span className="amt">{quantity}</span></span>
+            <span className="quantity">{quantity}</span>
           </div>
         </div>
       </div>
