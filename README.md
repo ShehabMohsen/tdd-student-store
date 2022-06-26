@@ -4,7 +4,8 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+walkthrough:
+https://user-images.githubusercontent.com/97417536/175801382-8b0f348e-d96a-455a-a904-4b87c962306e.mov
 
 ### Application Features
 
@@ -108,11 +109,11 @@ The following specifications were met on the Express backend and the React front
 **Home.jsx**
 
 - [x] Should render JSX that is wrapped by a `div` element with a `className` of `home`
-- [ ] Should accept **at least** the following props:
+- [x] Should accept **at least** the following props:
   - `products` - an array of product objects
   - `handleAddItemToCart` - handler function defined in the `App.jsx` component
   - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-- [ ] Should render the `Hero` component
+- [x] Should render the `Hero` component
 - [x] Should render the `ProductGrid` component
 
 **Hero.jsx**
@@ -191,7 +192,7 @@ The following specifications were met on the Express backend and the React front
   - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm` object
   - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
   - `handleOnToggle` - handler function to toggle open/closed `Sidebar` state
-- [ ] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
+- [x] It should always render a `button` element with the `className` of `toggle-button`. When that button is clicked it should change the `isOpen` prop by calling the `handleOnToggle` prop.
 - [x] When the sidebar is opened, it should display the `ShoppingCart` and `CheckoutForm` components and should be wider than `350px`.
 - [x] When the sidebar is closed, it should only render the toggle button and shouldn't be wider than `150px`.
 
@@ -238,8 +239,8 @@ The following specifications were met on the Express backend and the React front
     - [ ] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
     - [ ] If the `POST` request is successful...
       - [ ] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.
-      - [ ] The `shoppingCart` should be emptied
-      - [ ] The `checkoutForm` should be reset to its default state.
+      - [x] The `shoppingCart` should be emptied
+      - [x] The `checkoutForm` should be reset to its default state.
 
 **Server** - Create an Express server
 
@@ -251,13 +252,13 @@ The following specifications were met on the Express backend and the React front
 
 - [x] List all products currently in the `db.json` file
 - [x] Fetch a single product by its id
-- [ ] Create a purchase order
+- [x] Create a purchase order
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
 
 - [x] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
 - [x] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
-- [ ] It should allow `POST` requests to the `/store` endpoint:
+- [x] It should allow `POST` requests to the `/store` endpoint:
   - [x] The endpoint should create purchase orders for users and save them to the `db.json` file
   - [x] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
     - [x] The `shoppingCart` field should contain the user's order.
@@ -268,11 +269,11 @@ The following specifications were met on the Express backend and the React front
         - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
     - [x] The `user` field should contain the name and email of the person placing the order.
     - [x] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
-    - [ ] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
+    - [x] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
     - [x] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
     - [x] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
       - **required**:
-        - [ ] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
+        - [x] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases
         - [x] `name` - the name of the user making the purchase
         - [x] `email` - the email of the user making the purchase
         - [x] `order` - the `shoppingCart` value sent in the `POST` request
