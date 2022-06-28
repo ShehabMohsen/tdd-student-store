@@ -9,7 +9,7 @@ Week 2 walkthrough:
 https://user-images.githubusercontent.com/97417536/176102654-e2d12a57-e640-4303-93c4-d9bac1dcee92.mp4
 
 
-Week 3 Walkthrough
+Week 3 Walkthrough:
 
 https://user-images.githubusercontent.com/97417536/176102684-d66c53d7-8227-4acc-b8a8-23ad74262113.mp4
 
