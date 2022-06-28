@@ -4,8 +4,15 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-walkthrough:
-https://user-images.githubusercontent.com/97417536/175801382-8b0f348e-d96a-455a-a904-4b87c962306e.mov
+Week 2 walkthrough:
+
+https://user-images.githubusercontent.com/97417536/176102654-e2d12a57-e640-4303-93c4-d9bac1dcee92.mp4
+
+
+Week 3 Walkthrough
+
+https://user-images.githubusercontent.com/97417536/176102684-d66c53d7-8227-4acc-b8a8-23ad74262113.mp4
+
 
 ### Application Features
 
@@ -20,7 +27,7 @@ https://user-images.githubusercontent.com/97417536/175801382-8b0f348e-d96a-455a-
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -119,8 +126,8 @@ The following specifications were met on the Express backend and the React front
 **Hero.jsx**
 
 - [x] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
-- [ ] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
-- [ ] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
+- [x] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
+- [x] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
 
 **ProductGrid.jsx**
 
@@ -142,7 +149,7 @@ The following specifications were met on the Express backend and the React front
 - [x] When the component is mounted to the screen...
   - [x] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
   - [x] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
-  - [ ] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
+  - [x] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
   - [x] It should store the `product` received by the request in state and then render the `ProductView` component.
   - [x] If no `product` is found with that `id`, it should render the `NotFound` component
 
@@ -264,7 +271,7 @@ The following specifications were met on the Express backend and the React front
     - [x] The `shoppingCart` field should contain the user's order.
       - [x] This should be an array of objects.
       - [x] Each object in the array should have two fields:
-        <!-- - [ ] The `item` field should store an object of the item being purchased -->
+        <!-- - [x] The `item` field should store an object of the item being purchased -->
         - [x] The `itemId` field should store the `id` of the item being purchased
         - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
     - [x] The `user` field should contain the name and email of the person placing the order.
@@ -280,5 +287,5 @@ The following specifications were met on the Express backend and the React front
         - [x] `total` - the calculated total of the order
         - [x] `createdAt` - a string representation of the date and time when the order was placed
       - **optional**:
-        - [ ] `receipt` - text describing the order (what might go on a receipt)
+        - [x] `receipt` - text describing the order (what might go on a receipt)
     - [x] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
