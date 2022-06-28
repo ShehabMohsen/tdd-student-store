@@ -38,7 +38,7 @@ router.get("/:product", async (req, res, next) => {
   -use the quantity of the item to compute the total price, but you need to complete the step before 
     multiply item prices by 0.0875
   -put it together and write it to the file
-  -send back a response with the form `{ "purchase": purchase }`
+  -send back a response with the form `{"purchase": purchase}`
 */
 
 router.post("/", async (req, res, next)=>{

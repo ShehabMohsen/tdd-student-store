@@ -1,5 +1,6 @@
 const {storage} = require("../data/storage") 
 const { BadRequestError } = require("../utils/errors");
+const TAX_MULTIPLIER = 1.0875
 // const db = require("../data/db")
 
 
@@ -32,13 +33,11 @@ class Store{
         let user = purchase.user
         let email = purchase.user.email
         let name = purchase.user.name
-        let order = purchase.shoppingCart
         let subTotal = 0;
-        let id = storage.get("purchases").value().length;
+        let id = storage.get("purchases").value().length;    
         
-
-
         const products = await this.listItems()
+        let order = purchase.shoppingCart
         
         // if there are duplicate items in the cart
         let idArray = order.map(function(element){ return element.itemId});
@@ -46,22 +45,36 @@ class Store{
             return idArray.indexOf(element) != index
         });
         if (isDuplicate) throw new BadRequestError("all items must have unique id")
-        
-        
 
+        
+        const receipt = []
+        
         //looping through orders in order to get item price
         order.map((element)=>{
             if (!element.itemId || !element.quantity)
-            throw new BadRequestError("no item id or quantity provided")
-
+                throw new BadRequestError("no item id or quantity provided")
+            
+            //returns the element that matches the itemId attribute inside 'order'
             let product = products.find((e)=>{
                 return (e.id == element.itemId)
             })
-            subTotal+= (product.price * element.quantity)*(1.0875)
-        })
+            if (!product) throw new BadRequestError(`item with ${element.itemId} not found`)
 
-        subTotal = subTotal.toFixed(2);
-        const newPurchase = {id, name, email, order, subTotal, postedAt}
+
+            let tempObj = {
+                id:product.id,
+                name: product.name,
+                price: product.price,
+                quantity: element.quantity,
+                totalPrice: product.price * element.quantity
+            }
+            receipt.push(tempObj)
+
+            subTotal+= (product.price * element.quantity)
+
+        })
+        subTotal = (subTotal*TAX_MULTIPLIER).toFixed(2);
+        const newPurchase = {id, name, email, order, subTotal, postedAt, receipt}
         storage.get("purchases").push(newPurchase).write()
         return newPurchase
     }

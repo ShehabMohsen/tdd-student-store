@@ -11,6 +11,7 @@ export default function Sidebar({
   checkoutForm,
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
+  receipt,
 }) {
   return (
     <section className="sidebar">
@@ -20,9 +21,14 @@ export default function Sidebar({
         </a>
         <ShoppingCart shoppingCart={shoppingCart} products={products} />
 
-        <CheckoutForm checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange}
-        handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm}
-        shoppingCart = {shoppingCart} isOpen = {isOpen}/>
+        <CheckoutForm
+          checkoutForm={checkoutForm}
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+          shoppingCart={shoppingCart}
+          isOpen={isOpen}
+          receipt={receipt}
+        />
       </div>
     </section>
   );

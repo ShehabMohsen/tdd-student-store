@@ -146,5 +146,470 @@
     }
   ],
   "purchases": [
+    {
+      "id": 0,
+      "name": "Shehab",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "2.71",
+      "postedAt": "2022-06-26T05:49:59.998Z"
+    },
+    {
+      "id": 1,
+      "name": "Shehab",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "27.70",
+      "postedAt": "2022-06-26T05:50:44.925Z"
+    },
+    {
+      "id": 2,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "4.88",
+      "postedAt": "2022-06-27T21:21:55.961Z"
+    },
+    {
+      "id": 3,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "5.96",
+      "postedAt": "2022-06-27T21:29:03.743Z"
+    },
+    {
+      "id": 4,
+      "name": "shehab",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "5.96",
+      "postedAt": "2022-06-27T22:15:44.881Z",
+      "receipt": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "quantity": 1,
+          "totalPrice": 2.99
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "6.79",
+      "postedAt": "2022-06-27T22:34:24.020Z",
+      "receipt": [
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "quantity": 1,
+          "totalPrice": 3.25
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "quantity": 1,
+          "totalPrice": 2.99
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "6.79",
+      "postedAt": "2022-06-27T22:45:01.697Z",
+      "receipt": [
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "quantity": 1,
+          "totalPrice": 2.99
+        },
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "quantity": 1,
+          "totalPrice": 3.25
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "5.96",
+      "postedAt": "2022-06-27T22:51:23.653Z",
+      "receipt": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "quantity": 1,
+          "totalPrice": 2.99
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "6.24",
+      "postedAt": "2022-06-27T23:03:29.435Z",
+      "receipt": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        },
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "quantity": 1,
+          "totalPrice": 3.25
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "8.42",
+      "postedAt": "2022-06-27T23:09:20.409Z",
+      "receipt": [
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        },
+        {
+          "id": 3,
+          "name": "Cinnamon Rolls",
+          "price": 2.99,
+          "quantity": 1,
+          "totalPrice": 2.99
+        },
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "quantity": 1,
+          "totalPrice": 3.25
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "shehab",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "6.24",
+      "postedAt": "2022-06-28T05:20:33.121Z",
+      "receipt": [
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        },
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 4,
+          "name": "Coconut Water",
+          "price": 3.25,
+          "quantity": 1,
+          "totalPrice": 3.25
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "2.71",
+      "postedAt": "2022-06-28T05:31:06.215Z",
+      "receipt": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "2.71",
+      "postedAt": "2022-06-28T05:31:28.275Z",
+      "receipt": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "backend",
+      "email": "aquashehab612@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "subTotal": "2.71",
+      "postedAt": "2022-06-28T05:31:48.339Z",
+      "receipt": [
+        {
+          "id": 1,
+          "name": "Rice Krispies",
+          "price": 0.99,
+          "quantity": 1,
+          "totalPrice": 0.99
+        },
+        {
+          "id": 2,
+          "name": "Flamin Hot Cheetos",
+          "price": 1.5,
+          "quantity": 1,
+          "totalPrice": 1.5
+        }
+      ]
+    }
   ]
 }
